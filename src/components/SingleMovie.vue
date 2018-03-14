@@ -16,11 +16,13 @@ export default {
   props: ['movie'],
   computed: {
     favourite() {
-      console.log('in computed', this.$store.state.favourites[this.movie.id])
       return this.$store.state.favourites[this.movie.id] === undefined
         ? 'Add to Favourites'
         : 'Remove from Favourites'
     }
+    // image() {
+    //   if (!movie.img) movie.img = 'http://www.reelviews.net/resources/img/default_poster.jpg';
+    // }
   },
   methods: {
     addRemoveFavourites() {

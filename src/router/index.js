@@ -4,6 +4,7 @@ import Dashboard from '@/components/Dashboard'
 import SearchedMovies from '@/components/SearchedMovies'
 import Favourites from '@/components/Favourites'
 import SingleMovie from '@/components/SingleMovie'
+import AddMovie from '@/components/AddMovie'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/favourites',
       name: 'Favourites',
       component: Favourites
+    },
+    {
+      path: '/addMovie',
+      name: 'AddMovie',
+      component: AddMovie
     }
   ]
 })

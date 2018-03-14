@@ -8,19 +8,26 @@
 import Movie from './Movie.vue'
 export default {
   name: 'Favourites',
+  components: {
+    Movie
+  },
   computed: {
     favourites() {
-      const movies = []
+      const favourites = []
       const favs = this.$store.state.favourites
       for (let id in favs) {
-        movies.push(favs[id])
+        favourites.push(favs[id])
       }
-      return movies
+      return favourites
     }
   }
 }
 </script>
 
 <style scoped>
-
+.movie-list {
+  display: flex;
+  overflow-x: scroll;
+  margin: 20px;
+}
 </style>

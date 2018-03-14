@@ -2,6 +2,7 @@
   <nav class="navbar">
     <h1 class="logo" v-on:click="goToHome">Movie App</h1>
     <div class="user-controls">
+      <button v-on:click="goToAddMovie">Add Movie</button>
       <button v-on:click="goToFavourites">My Favourites</button>
       <input class="search-input" @input="showResults" v-model="query" type="text" placeholder="Search..."/>
     </div>
@@ -28,6 +29,9 @@ export default {
     },
     goToFavourites () {
       router.push({name: 'Favourites'})
+    },
+    goToAddMovie () {
+      router.push({name: 'AddMovie'})
     }
   }
 }

@@ -7,6 +7,7 @@
 <script>
 import router from '../router/index'
 export default {
+  name: 'Movie',
   props: ['movie'],
   methods: {
     goToMovie() {
