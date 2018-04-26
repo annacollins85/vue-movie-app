@@ -12,7 +12,7 @@ export default {
     Movie
   },
   computed: {
-    favourites() {
+    favourites () {
       const favourites = []
       const favs = this.$store.state.favourites
       for (let id in favs) {

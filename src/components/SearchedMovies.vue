@@ -12,13 +12,13 @@ export default {
   components: {
     Movie
   },
-  data: function() {
+  data: function () {
     return {
       movies: []
     }
   },
   methods: {
-    fetchMovies(query) {
+    fetchMovies (query) {
       fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=6d2e1905a9d27de89f756047be0a6c0a&query=${query}`
       )
@@ -39,11 +39,11 @@ export default {
     }
   },
   watch: {
-    query: async function(newVal) {
+    query: async function (newVal) {
       await this.fetchMovies(newVal)
     }
   },
-  mounted() {
+  mounted () {
     this.fetchMovies(this.query)
   }
 }

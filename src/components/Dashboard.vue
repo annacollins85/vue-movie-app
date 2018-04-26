@@ -11,12 +11,12 @@ export default {
   components: {
     Movie
   },
-  data: function() {
+  data: function () {
     return {
       movies: []
     }
   },
-  mounted() {
+  mounted () {
     fetch(
       'https://api.themoviedb.org/3/discover/movie?api_key=6d2e1905a9d27de89f756047be0a6c0a&page=2'
     )

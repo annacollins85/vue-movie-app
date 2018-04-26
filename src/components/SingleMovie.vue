@@ -1,6 +1,6 @@
 <template>
   <div class="single-movie-page">
-    <img class="movie-img" :src="movie.img"></img>
+    <img class="movie-img" :src="movie.img" />
     <div class="single-movie-info">
       <h1>{{movie.title}}</h1>
       <h3>Rating: {{movie.stars}}</h3>
@@ -15,7 +15,7 @@
 export default {
   props: ['movie'],
   computed: {
-    favourite() {
+    favourite () {
       return this.$store.state.favourites[this.movie.id] === undefined
         ? 'Add to Favourites'
         : 'Remove from Favourites'
@@ -25,7 +25,7 @@ export default {
     // }
   },
   methods: {
-    addRemoveFavourites() {
+    addRemoveFavourites () {
       this.$store.commit('changeFavourites', this.movie)
     }
   }

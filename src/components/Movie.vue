@@ -1,6 +1,6 @@
 <template>
   <div class="movie-item">
-      <img :src="movie.img" v-on:click="goToMovie"></img>
+      <img :src="movie.img" v-on:click="goToMovie" />
   </div>
 </template>
 
@@ -10,8 +10,8 @@ export default {
   name: 'Movie',
   props: ['movie'],
   methods: {
-    goToMovie() {
-      router.push({ name: 'SingleMovie', params: { movieId: this.movie.id, movie: this.movie }})
+    goToMovie () {
+      router.push({name: 'SingleMovie', params: {movieId: this.movie.id, movie: this.movie}})
     }
   }
 }
