@@ -3,24 +3,45 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const deleteFav = (state, movie) => {
-  Vue.delete(state.favourites, movie.id)
+const deleteFav = (state, index) => {
+  state.favourites.splice(index, 1)
+  state.favourites = state.favourites.concat([])
 }
 
-const addFav = (state, movie) => {
-  Vue.set(state.favourites, movie.id, movie)
+const addFav = (state, movieId) => {
+  state.favourites = state.favourites.concat([movieId])
 }
 
 export const store = new Vuex.Store({
   state: {
-    favourites: {}
+    movies: {},
+    favourites: []
+  },
+  getters: {
+    favMovies: state => {
+      const favs = []
+      state.favourites.forEach(movieId => {
+        favs.push(state.movies[movieId])
+      })
+      return favs
+    }
   },
   mutations: {
-    changeFavourites: (state, movie) => {
-      if (state.favourites[movie.id]) {
-        return deleteFav(state, movie)
+    addMovies: (state, movies) => {
+      movies.forEach(movie => {
+        state.movies[movie.id] = movie
+      })
+      state.movies = {...state.movies}
+    },
+    changeFavourites: (state, movieId) => {
+      const index = state.favourites.indexOf(movieId)
+      if (index !== -1) {
+        return deleteFav(state, index)
       }
-      addFav(state, movie)
+      addFav(state, movieId)
+    },
+    addFavourite: (state, movieId) => {
+      addFav(state, movieId)
     }
   }
 })

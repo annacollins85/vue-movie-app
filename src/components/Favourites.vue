@@ -13,12 +13,7 @@ export default {
   },
   computed: {
     favourites () {
-      const favourites = []
-      const favs = this.$store.state.favourites
-      for (let id in favs) {
-        favourites.push(favs[id])
-      }
-      return favourites
+      return this.$store.getters.favMovies
     }
   }
 }

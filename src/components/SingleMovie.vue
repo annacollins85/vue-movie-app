@@ -16,17 +16,17 @@ export default {
   props: ['movie'],
   computed: {
     favourite () {
-      return this.$store.state.favourites[this.movie.id] === undefined
+      return this.$store.state.favourites.includes(this.movie.id) === false
         ? 'Add to Favourites'
         : 'Remove from Favourites'
     }
-    // image() {
-    //   if (!movie.img) movie.img = 'http://www.reelviews.net/resources/img/default_poster.jpg';
+    // image () {
+    //   if (!this.movie.img)  'http://www.reelviews.net/resources/img/default_poster.jpg';
     // }
   },
   methods: {
     addRemoveFavourites () {
-      this.$store.commit('changeFavourites', this.movie)
+      this.$store.commit('changeFavourites', this.movie.id)
     }
   }
 }
