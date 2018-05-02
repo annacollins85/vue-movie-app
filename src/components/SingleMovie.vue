@@ -16,17 +16,20 @@ export default {
   props: ['movie'],
   computed: {
     favourite () {
-      return this.$store.state.favourites.includes(this.movie.id) === false
+      return this.$store.state.movies.favourites.includes(this.movie.id) === false
         ? 'Add to Favourites'
         : 'Remove from Favourites'
     }
     // image () {
-    //   if (!this.movie.img)  'http://www.reelviews.net/resources/img/default_poster.jpg';
+    //   if (!this.movie.img)  {
+    //     return 'http://www.reelviews.net/resources/img/default_poster.jpg';
+    //   }
+    //   return this.movie.image
     // }
   },
   methods: {
     addRemoveFavourites () {
-      this.$store.commit('changeFavourites', this.movie.id)
+      this.$store.dispatch('movies/changeFavourites', this.movie.id)
     }
   }
 }
@@ -41,6 +44,10 @@ export default {
 .single-movie-info {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+img {
+  height: 400px;
 }
 
 button {

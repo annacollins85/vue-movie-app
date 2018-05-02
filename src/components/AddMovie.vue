@@ -14,6 +14,15 @@ import router from '../router/index'
 
 export default {
   name: 'AddMovie',
+  data: function () {
+    return {
+      title: this.title,
+      stars: this.stars,
+      img: this.img,
+      overview: this.overview,
+      releaseDate: this.releaseDate
+    }
+  },
   methods: {
     addMovieToFav () {
       const movie = {
@@ -24,9 +33,10 @@ export default {
         overview: this.overview,
         releaseDate: this.releaseDate
       }
-      this.$store.commit('addMovies', [movie])
-      this.$store.commit('addFavourite', movie)
-      router.push({name: 'Favourites'})
+      console.log(movie)
+      this.$store.dispatch('movies/addMovies', [movie])
+      this.$store.dispatch('movies/changeFavourites', movie.id)
+      router.push({name: 'Favourites', params: {movie}})
     }
   }
 }

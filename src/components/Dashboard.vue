@@ -34,7 +34,7 @@ export default {
         })
       )
       .then(results => (this.movies = results))
-      .then(results => this.$store.commit('addMovies', results))
+      .then(results => this.$store.dispatch('movies/addMovies', results))
   }
 }
 </script>

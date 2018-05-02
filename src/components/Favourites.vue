@@ -13,7 +13,7 @@ export default {
   },
   computed: {
     favourites () {
-      return this.$store.getters.favMovies
+      return this.$store.getters['movies/favMovies']
     }
   }
 }

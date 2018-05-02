@@ -24,6 +24,10 @@ export default {
   margin-top: 10px;
 }
 
+img {
+  height: 400px;
+}
+
 .movie-item:hover {
   cursor: pointer;
 }
