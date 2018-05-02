@@ -34,8 +34,8 @@ export default {
         releaseDate: this.releaseDate
       }
       console.log(movie)
-      this.$store.dispatch('movies/addMovies', [movie])
-      this.$store.dispatch('movies/changeFavourites', movie.id)
+      this.$store.dispatch('movies/ADD_MOVIES', [movie])
+      this.$store.dispatch('movies/CHANGE_FAVOURITES', movie.id)
       router.push({name: 'Favourites', params: {movie}})
     }
   }

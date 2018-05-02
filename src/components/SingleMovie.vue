@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     addRemoveFavourites () {
-      this.$store.dispatch('movies/changeFavourites', this.movie.id)
+      this.$store.dispatch('movies/CHANGE_FAVOURITES', this.movie.id)
     }
   }
 }

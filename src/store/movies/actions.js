@@ -1,10 +1,11 @@
 import * as types from '../mutation-types'
+import { ADD_MOVIES, CHANGE_FAVOURITES } from '../action-types'
 
 export default {
-  addMovies ({ commit }, movies) {
+  [ADD_MOVIES] ({ commit }, movies) {
     commit(types.MOVIES_ADD_MOVIES, movies)
   },
-  changeFavourites ({ commit }, movieId) {
+  [CHANGE_FAVOURITES] ({ commit }, movieId) {
     commit(types.MOVIES_CHANGE_FAVOURITES, movieId)
   }
 }

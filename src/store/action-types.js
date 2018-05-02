@@ -1,0 +1,2 @@
+export const ADD_MOVIES = 'ADD_MOVIES'
+export const CHANGE_FAVOURITES = 'CHANGE_FAVOURITES'
